@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion : 2010-09-09
+Description: 'creating crawler'
+Resources:
+  s3sourceBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ctg-fis-khan
+
+  crawlersetup:
+    Type: AWS::Glue::Crawler
+    Properties: 
+      DatabaseName: crwler-ctf
+      Description: creating crwler
+      Name: ctg-fis-cf-crwler
+      Role: arn:aws:iam::472831976827:role/Ctg-fis-razik-glue-role
+      Targets: 
+        S3Targets:
+          - Path: s3://classifier123/salesdata/
+  
+    

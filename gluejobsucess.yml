@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion : 2010-09-09
+Description: 'creating crawler'
+Resources:
+  gluejobcreation:
+    Type: AWS::Glue::Job
+    Properties: 
+      Command: 
+        Name: glueetl
+        ScriptLocation: 's3://classifier-razik/jobscript/script.txt'
+      Name: ctg-fis-cfjob
+      Role: arn:aws:iam::472831976827:role/Ctg-fis-razik-glue-role
+      
+
+
+      
+         
