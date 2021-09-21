@@ -5,7 +5,7 @@ Resources:
     Type: 'AWS::Lambda::Function'
     Properties:
       Runtime: python3.8
-      Role: arn:aws:iam::472831976827:role/Access_Role_FIS_razik
+      Role: rolename
       Handler: index.handler
       FunctionName: "cfnfunction"
       Code:
@@ -29,7 +29,7 @@ Resources:
         file_content = file_obj["Body"].read().decode('utf-8')
         print(file_content)
     try:
-        response = Client.start_crawler(Name='ctg-fis-cra-razee')
+        response = Client.start_crawler(Name='crwlername')
         time.sleep(30)
     except Exception as ex:
         print(ex)
